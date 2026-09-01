@@ -15,59 +15,49 @@
   </head>
   <body>
     <header>
-      <h1>splapi3 URL Builder</h1>
-      <p>
-        Discord 埋め込み用URLに現在時刻の <code>t</code>(cache buster)
-        を自動付与して生成・コピーする
-      </p>
+      <h1 class="font-paint">URL Builder for splat.site</h1>
     </header>
 
     <main>
       <section>
-        <h2>設定</h2>
+        <h2>せってい</h2>
         <div class="row">
           <div>
             <label for="mode">モード</label>
             <select id="mode">
-              <option value="open">バンカラ (open)</option>
+              <option value="open">バンカラマッチ (オープン)</option>
               <option value="regular">レギュラー</option>
             </select>
           </div>
           <div>
-            <label for="when">対象</label>
+            <label for="when">いつ</label>
             <select id="when">
-              <option value="now">現在開催中 (now)</option>
-              <option value="next">次回以降 (next)</option>
+              <option value="now">いま</option>
+              <option value="next">つぎ</option>
             </select>
           </div>
         </div>
         <div class="row" id="n-row" style="display: none">
           <div>
-            <label for="n">n（何回後か。0=now, 1=次回, 2=次々回 ...）</label>
+            <label for="n">0: いま, 1: つぎ, 2: つぎのつぎ ...</label>
             <input type="number" id="n" value="1" min="0" max="8" />
           </div>
         </div>
       </section>
 
       <section>
-        <h2>生成されたURL</h2>
+        <h2>URL</h2>
         <div class="card">
           <pre id="url-output"></pre>
           <button id="copy-btn">コピー</button>
           <span class="copied" id="copied-msg">コピーしました</span>
         </div>
-        <p style="color: var(--muted); font-size: 0.85rem">
-          <code>t</code> はコピー時点の unix timestamp（秒）。Discord
-          は同一URLのプレビューをキャッシュするため、 毎回異なる
-          <code>t</code>
-          を付けることでキャッシュを回避し最新スケジュールを表示させる。
-        </p>
       </section>
 
       <section>
         <h2>ベースURL</h2>
         <div class="card">
-          <label for="base">splapi3 のベースURL</label>
+          <label for="base">ベースURL</label>
           <input type="text" id="base" value="https://splat.site" />
         </div>
       </section>
